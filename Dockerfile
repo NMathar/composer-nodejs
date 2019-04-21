@@ -1,4 +1,4 @@
-FROM php:7.2
+FROM php:7.2-fpm
 
 RUN apt update && \
   apt install -y apt-transport-https build-essential gnupg git zip unzip
