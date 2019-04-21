@@ -3,6 +3,8 @@ FROM php:7.2-fpm
 RUN apt update && \
   apt install -y apt-transport-https build-essential gnupg git zip unzip
 
+RUN rm -rf /var/lib/apt/lists/*
+RUN pecl install mongodb-1.2.0 && docker-php-ext-enable mongodb
 # Install composer and put binary into $PATH
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/ && \
