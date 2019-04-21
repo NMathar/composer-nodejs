@@ -1,7 +1,7 @@
 FROM php:7.2-fpm
 
 RUN apt update && \
-  apt install -y apt-transport-https build-essential gnupg git zip unzip
+  apt install -y apt-transport-https build-essential gnupg git zip unzip openssl libssl-dev
 
 RUN rm -rf /var/lib/apt/lists/*
 RUN pecl install mongodb-1.2.0 && docker-php-ext-enable mongodb
